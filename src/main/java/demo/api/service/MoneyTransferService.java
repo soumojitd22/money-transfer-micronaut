@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.transaction.Transactional;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -24,6 +25,7 @@ public class MoneyTransferService {
         return transactionDAO.getAccountBalance(mobileNumber);
     }
 
+    @Transactional
     public void transferMoney(Transaction transaction) {
         long fromAccountBalance = transactionDAO.getAccountBalance(transaction.getFromMobileNumber());
         if (transaction.getAmount() > fromAccountBalance) {

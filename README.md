@@ -1,11 +1,19 @@
 **Money Transfer using Micronaut**
 
-_Transactional support not possible in micronaut without spring-data or hibernate_
+Provides 3 REST endpoints -
 <br>
-_That's why skipped the Transactional part_
+1. /register-account
+2. /check-balance
+3. /transfer-money
 
 To build -
+<br>
 `./mvnw clean package`
 
 To run -
-`java -jar target\money-transfer-mn-0.1.jar`
+<br>
+`java -jar target/money-transfer-mn-0.1.jar`
+
+Access the swagger-ui endpoint -
+<br>
+`http://localhost:8080/swagger-ui`
